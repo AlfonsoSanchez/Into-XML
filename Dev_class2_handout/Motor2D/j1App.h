@@ -69,7 +69,8 @@ public:
 	j1Audio*			audio;
 	j1Scene*			scene;
 
-
+	
+	pugi::xml_node tag;
 private:
 
 	p2List<j1Module*>	modules;
@@ -80,7 +81,7 @@ private:
 	// a xml_document to store the while config file and
 	pugi::xml_document config; // config es el nombre del archivo xml en game
 	// a xml_node to read specific branches of the xml
-	pugi::xml_node tag;  // tag para leer dentro de config
+	 // tag para leer dentro de config
 	
 
 	int					argc;

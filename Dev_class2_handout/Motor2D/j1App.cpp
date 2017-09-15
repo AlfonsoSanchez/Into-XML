@@ -13,7 +13,7 @@
 j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 {
 	frames = 0;
-
+	
 	input = new j1Input();
 	win = new j1Window();
 	render = new j1Render();
@@ -59,6 +59,7 @@ bool j1App::Awake()
 {
 	// TODO 3: Load config.xml file using load_file() method from the xml_document class.
 	pugi::xml_parse_result result = config.load_file("config.xml");
+	tag = config.child("config").child("name");
 	// If everything goes well, load the top tag inside the xml_node property
 	// created in the last TODO
 
