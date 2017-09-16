@@ -2,12 +2,13 @@
 
 <config>
 	<name>My super awesome game</name>
-	<FULLSCREEN value=false></ FULLSCREEN>
-	<BORDERLESS value=false></BORDERLESS>
-	<RESIZABLE value=true></RESIZABLE>
-	<FULLSCREEN_WINDOW value = false></FULLSCREEN_WINDOW>
-	<TITLE>replacement title</TITLE>
-	<WIDTH value=1024></WIDTH>
-	<HEIGHT value=768></HEIGHT>
-	<SCALE value=1></SCALE>
+<Macros
+	FULLSCREEN value="false"
+	BORDERLESS value="false"
+	RESIZABLE value="true"
+	FULLSCREEN_WINDOW value = "false"
+	WIDTH value= "1024"
+	HEIGHT value= "768"
+	SCALE value="1">	
+</Macros>
 </config>

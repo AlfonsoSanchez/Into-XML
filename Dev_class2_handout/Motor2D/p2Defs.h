@@ -54,14 +54,14 @@ template <class VALUE_TYPE> void SWAP(VALUE_TYPE& a, VALUE_TYPE& b)
 // TODO 6: Improve config.xml to store all configuration variables that we have as macros
 // Use a section with the name of each module (see Module::name)
 
-#define FULLSCREEN false
+/*#define FULLSCREEN App->tag.child("Macro").attribute("FULLSCREEN").as_bool();
 #define BORDERLESS false
 #define RESIZABLE true
 #define FULLSCREEN_WINDOW false
 #define TITLE "replaceme title"
 #define WIDTH 1024
-#define HEIGHT 768
-#define SCALE 1
+#define HEIGHT 768*/
+#define SCALE App->tag.child("name").next_sibling().child("SCALE").attribute("value").as_int();
 
 // Joins a path and file
 inline const char* const PATH(const char* folder, const char* file)

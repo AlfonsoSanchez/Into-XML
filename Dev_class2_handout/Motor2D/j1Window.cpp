@@ -38,28 +38,28 @@ bool j1Window::Awake()
 		height = App->tag.child("config").child("name").child("HEIGHT").attribute("value").as_int(768);
 		scale = SCALE;
 
-		if(App->tag.child("FULLSCREEN").attribute("value").as_bool(false))
+		if(App->tag.child("name").next_sibling().child("FULLSCREEN").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN;
 		}
 
-		if(App->tag.child("BORDERLESS").attribute("value").as_bool(false))
+		if(App->tag.child("name").next_sibling().child("BORDERLESS").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_BORDERLESS;
 		}
 
-		if(App->tag.child("RESIZABLE").attribute("value").as_bool(true))
+		if(App->tag.child("name").next_sibling().child("RESIZABLE").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_RESIZABLE;
 		}
 
-		if(App->tag.child("FULLSCREEN_WINDOW").attribute("value").as_bool(false))
+		if(App->tag.child("name").next_sibling().child("FULLSCREEN_WINDOW").attribute("value").as_bool())
 		{
 			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 		}
-		//int x = App->tag.child("name").child("WIDTH").attribute("value").as_int();
+		
 
-		window = SDL_CreateWindow(App->tag.child("name").child_value(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width,height, flags);
+		window = SDL_CreateWindow(App->tag.child("name").child_value(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, App->tag.child("name").next_sibling().child("WIDTH").attribute("value").as_int(), App->tag.child("name").next_sibling().child("HEIGHT").attribute("value").as_int(), flags);
 
 		if(window == NULL)
 		{
