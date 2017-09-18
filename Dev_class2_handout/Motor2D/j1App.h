@@ -24,7 +24,7 @@ public:
 	virtual ~j1App();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(pugi::xml_node& read);
 
 	// Called before the first frame
 	bool Start();
@@ -41,6 +41,8 @@ public:
 	// Exposing some properties for reading
 	int GetArgc() const;
 	const char* GetArgv(int index) const;
+
+	
 
 private:
 

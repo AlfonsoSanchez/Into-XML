@@ -29,7 +29,8 @@ int main(int argc, char* args[])
 
 	MainState state = CREATE;
 	int result = EXIT_FAILURE;
-
+	pugi::xml_node* read = nullptr;
+	
 	while(state != EXIT)
 	{
 		switch(state)
@@ -51,7 +52,7 @@ int main(int argc, char* args[])
 			// Awake all modules -----------------------------------------------
 			case AWAKE:
 			LOG("AWAKE PHASE ===============================");
-			if(App->Awake() == true)
+			if(App->Awake(*read) == true)
 				state = START;
 			else
 			{
